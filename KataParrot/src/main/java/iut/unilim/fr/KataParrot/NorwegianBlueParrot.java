@@ -1,6 +1,7 @@
 package iut.unilim.fr.KataParrot;
 
 public class NorwegianBlueParrot extends Parrot {
+	private static final double SPEED_MAX = 24.0;
 	private boolean isNailed;
 
 	public NorwegianBlueParrot(double voltage, boolean isNailed) {
@@ -10,6 +11,13 @@ public class NorwegianBlueParrot extends Parrot {
 
 	@Override
 	public double getSpeed() {
-		return (this.isNailed) ? 0 : getBaseSpeed(this.voltage);
+		if (isNailed)
+			return 0;
+		else
+			return getBaseSpeed(this.voltage);
+	}
+
+	private double getBaseSpeed(double voltage) {
+		return Math.min(SPEED_MAX, voltage * BASE_SPEED);
 	}
 }

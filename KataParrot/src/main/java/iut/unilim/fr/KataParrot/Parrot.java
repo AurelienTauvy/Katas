@@ -10,8 +10,4 @@ public abstract class Parrot {
 	}
 
 	public abstract double getSpeed();
-
-	protected double getBaseSpeed(double voltage) {
-		return Math.min(24.0, voltage * BASE_SPEED);
-	}
 }
