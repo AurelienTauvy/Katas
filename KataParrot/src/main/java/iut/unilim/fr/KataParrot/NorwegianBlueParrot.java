@@ -3,10 +3,12 @@ package iut.unilim.fr.KataParrot;
 public class NorwegianBlueParrot extends Parrot {
 	private static final double SPEED_MAX = 24.0;
 	private boolean isNailed;
+	private double voltage;
 
 	public NorwegianBlueParrot(double voltage, boolean isNailed) {
-		super(voltage);
+		super();
 		this.isNailed = isNailed;
+		this.voltage = voltage;
 	}
 
 	@Override
