@@ -2,9 +2,12 @@ package iut.unilim.fr.KataParrot;
 
 public class NorwegianBlueParrot extends Parrot {
 
-	public NorwegianBlueParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-		super(type, numberOfCoconuts, voltage, isNailed);
-		// TODO Auto-generated constructor stub
+	public NorwegianBlueParrot(double voltage, boolean isNailed) {
+		super(ParrotTypeEnum.NORWEGIAN_BLUE, voltage, isNailed);
 	}
 
+	@Override
+	public double getSpeed() {
+		return (this.isNailed) ? 0 : getBaseSpeed(this.voltage);
+	}
 }
