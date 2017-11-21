@@ -11,4 +11,7 @@ public class EuropeanParrot extends Parrot{
 		return getBaseSpeed();
 	}
 
+	private double getBaseSpeed() {
+		return BASE_SPEED;
+	}
 }
