@@ -2,8 +2,8 @@ package fr.unilim.iut.kebab;
 
 import fr.unilim.iut.kebab.ingredients.*;
 
-public class VisiteurRegimeVegetarien implements VisiteurDeRegime {
-
+public class VisiteurRegimePescetarien implements VisiteurDeRegime {
+	
 	@Override
 	public boolean visit(Agneau a) {
 		return false;
@@ -16,7 +16,7 @@ public class VisiteurRegimeVegetarien implements VisiteurDeRegime {
 
 	@Override
 	public boolean visit(Crevette a) {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class VisiteurRegimeVegetarien implements VisiteurDeRegime {
 
 	@Override
 	public boolean visit(Thon a) {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -57,5 +57,4 @@ public class VisiteurRegimeVegetarien implements VisiteurDeRegime {
 	public boolean visit(Assiette a) {
 		return true;
 	}
-
 }

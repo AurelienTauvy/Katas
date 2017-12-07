@@ -13,4 +13,5 @@ public interface VisiteurDeRegime {
 	boolean visit(Sauce a);
 	boolean visit(Thon a);
 	boolean visit(Tomate a);
+	boolean visit(Assiette a);
 }
