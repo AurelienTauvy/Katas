@@ -53,9 +53,5 @@ public class VisiteurRegimeVegetarien implements VisiteurDeRegime {
 	public boolean visit(Tomate a) {
 		return true;
 	}
-	@Override
-	public boolean visit(Assiette a) {
-		return true;
-	}
 
 }

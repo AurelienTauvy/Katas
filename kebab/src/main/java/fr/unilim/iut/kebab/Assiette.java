@@ -11,13 +11,4 @@ public class Assiette extends Kebab {
 		return new LinkedList<>();
 	}
 
-	public boolean isPescetarien() {
-		return true;
-	}
-	
-	@Override
-	public boolean accept(VisiteurDeRegime visiteur) {
-		return visiteur.visit(this);
-	}
-
 }

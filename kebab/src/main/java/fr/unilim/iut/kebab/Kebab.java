@@ -8,12 +8,19 @@ public abstract class Kebab {
 	boolean isVegetarien() {
 		VisiteurRegimeVegetarien visiteur = new VisiteurRegimeVegetarien();
 		for(Ingredient ingredient : this.getIngredients()) {
-			if(ingredient.accept(visiteur)==false) {
+			if(!ingredient.accept(visiteur)) {
 				return false;
 			}
 		}
 		return true;
 	}
-	public abstract boolean isPescetarien();
-	public abstract boolean accept(VisiteurDeRegime visiteur);
+	public boolean isPescetarien() {
+		VisiteurRegimePescetarien visiteur = new VisiteurRegimePescetarien();
+		for(Ingredient ingredient : this.getIngredients()) {
+			if(!ingredient.accept(visiteur)) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

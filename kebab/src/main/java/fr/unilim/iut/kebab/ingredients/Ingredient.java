@@ -19,10 +19,6 @@ public abstract class Ingredient extends Kebab {
 		ingredients.add(this);
 		return ingredients;
 	}
-
-	public boolean isPescetarien() {
-		return kebab.isPescetarien();
-	}
 	
 	public abstract boolean accept(VisiteurDeRegime visiteur);
 
