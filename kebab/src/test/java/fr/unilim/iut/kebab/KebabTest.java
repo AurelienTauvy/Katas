@@ -142,6 +142,5 @@ public class KebabTest {
     public void isVegetarien_devrait_retourner_faux_pour_kebabBoeuf() {
         assertThat(kebabBoeuf.isVegetarien()).isFalse();
     }
-    
 
 }
