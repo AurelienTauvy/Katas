@@ -3,29 +3,24 @@ package iut.unilim.fr.FizzBuzzBang;
 public class FizzBuzz {
 
 	public String donnerLaReponsePour(Integer nombre) {
+		String chaine = "";
+		
+		RegleFizz regleFizz = new RegleFizz();
+		RegleBuzz regleBuzz = new RegleBuzz();
 
-		if (isFizzBuzz(nombre))
-			return "fizzbuzz";
+		if (regleFizz.estVerifieePar(nombre)) {
+			chaine += regleFizz.valeurAAfficherSiRegleVerifiee();
+		}
 
-		if (isBuzz(nombre))
-			return "buzz";
+		if (regleBuzz.estVerifieePar(nombre)) {
+			chaine += regleBuzz.valeurAAfficherSiRegleVerifiee();
+		}
 
-		if (isFizz(nombre))
-			return "fizz";
+		if (chaine == "") {
+			return String.valueOf(nombre);
+		}
+		return chaine;
 
-		return String.valueOf(nombre);
-	}
-
-	private boolean isFizzBuzz(Integer nombre) {
-		return 0 == nombre % (3 * 5);
-	}
-
-	private boolean isBuzz(Integer nombre) {
-		return 0 == nombre % 5;
-	}
-
-	private boolean isFizz(Integer nombre) {
-		return 0 == nombre % 3;
 	}
 
 }
