@@ -1,26 +1,25 @@
 package iut.unilim.fr.FizzBuzzBang;
 
+import java.util.ArrayList;
+
 public class FizzBuzz {
 
 	public String donnerLaReponsePour(Integer nombre) {
-		String chaine = "";
 		
-		RegleFizz regleFizz = new RegleFizz();
-		RegleBuzz regleBuzz = new RegleBuzz();
+		ArrayList<Regle> regles = FizzBuzzRegleFactory.build();
+		String aRet = "";
+		
 
-		if (regleFizz.estVerifieePar(nombre)) {
-			chaine += regleFizz.valeurAAfficherSiRegleVerifiee();
+		for (Regle regle : regles) {
+			if (regle.isInterestedIn(nombre)) {
+				aRet += regle.getKeyWord();
+			}
 		}
-
-		if (regleBuzz.estVerifieePar(nombre)) {
-			chaine += regleBuzz.valeurAAfficherSiRegleVerifiee();
-		}
-
-		if (chaine == "") {
+		
+		if ("".equals(aRet)) {
 			return String.valueOf(nombre);
 		}
-		return chaine;
-
+		return aRet;
 	}
 
 }
